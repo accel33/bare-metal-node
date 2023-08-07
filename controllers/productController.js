@@ -1,9 +1,11 @@
 const Products = require('../models/productModel')
+// const dataProducts = require('../data/products')
 
 async function getProducts() {
   try {
     const products = await Products.findAll()
     console.log(products);
+    // const products = dataProducts
     return products
   } catch (e) {
     console.log(e);
