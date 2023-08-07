@@ -2,6 +2,7 @@ const { getProducts } = require('../controllers/productController')
 const products = require('../data/products')
 
 const headerJson = { 'Content-Type': 'application/json' }
+
 const rutaProductos = (req, res) => {
   if (req.url === '/products' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'application/json' })

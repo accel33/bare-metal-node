@@ -1,12 +1,17 @@
 const Products = require('../models/productModel')
 
-function getProducts() {
-  const products = Products.findAll()
-  return products
+async function getProducts() {
+  try {
+    const products = await Products.findAll()
+    console.log(products);
+    return products
+  } catch (e) {
+    console.log(e);
+  }
 }
 
-function getProductsById(id) {
-  const product = Products.find(id)
+async function getProductsById(id) {
+  const product = await Products.find(id)
   return product
 }
 
