@@ -1,16 +1,9 @@
 const http = require('http')
-const products = require('./data/products')
+const fs = require('fs')
+const rutaProductos = require('./routes/productRouter')
 
 const server = http.createServer((req, res) => {
-  // console.log('Hello')
-
-  // res.statusCode = 200
-  // res.setHeader('Content-Type', 'text/html')
-  // res.write('<h1>Hola Mundo</h1>')
-  // res.end()
-
-  res.writeHead(200, { 'Content-Type': 'application/json' })
-  res.end(JSON.stringify(products))
+  rutaProductos(req, res)
 })
 
 const PORT = process.env.PORT || 5001
